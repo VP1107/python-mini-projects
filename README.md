@@ -33,7 +33,7 @@ A number-guessing game where the user tries to guess a randomly generated number
 - Random number generation
 - Basic game logic
 
-📁 Folder: `perfect-guess-game`
+ Folder: `perfect-guess-game`
 
 ---
 
@@ -61,3 +61,4 @@ A classic Rock–Paper–Scissors game played between the user and the computer.
 1. Clone the repository:
    ```bash
    git clone https://github.com/VP1107/python-mini-projects.git
+
