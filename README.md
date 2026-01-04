@@ -37,7 +37,7 @@ A number-guessing game where the user tries to guess a randomly generated number
 
 ---
 
-### ✊✋✌️ Rock Paper Scissors
+### Rock Paper Scissors ✊✋✌️
 A classic Rock–Paper–Scissors game played between the user and the computer.
 
 **Concepts Used:**
@@ -61,4 +61,12 @@ A classic Rock–Paper–Scissors game played between the user and the computer.
 1. Clone the repository:
    ```bash
    git clone https://github.com/VP1107/python-mini-projects.git
-
+2. Navigate to the project folder:
+   ```bash
+   cd python-mini-projects
+3. Enter any project directory:
+   ```bash
+   cd perfect-guess-game
+4. Run the Python file:
+   ```bash
+   python main.py
