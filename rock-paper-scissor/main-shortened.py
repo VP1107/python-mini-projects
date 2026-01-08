@@ -4,24 +4,50 @@ set = {1, -1, 0}
 element = random.choice(list(set))
 
 computer = element 
-youstr = input("Enter your choice (Stone or Paper or Scissor):")
+youstr = input("Enter your choice (Stone or Paper or Scissor or End):")
 youDict = {"stone" : 1, "paper" : -1, "scissor" : 0}
 reverseDict = {1 : "Stone", -1 : "Paper", 0 : "Scissor"}
 
-you = youDict[youstr.lower()]
+with open("Score.txt", "w") as f:
+    f.write("Round  |  You  |  Computer\n")
 
-#By now we have two variables, you and computer
+y_score = 0
+c_score = 0
+if not youstr == "end":
+    you = youDict[youstr.lower()]
 
-print(f"You Chose {reverseDict[you]}\nComputer chose {reverseDict[computer]}")
+    def game(computer, you):
+        print(f"You Chose {reverseDict[you]}\nComputer chose {reverseDict[computer]}")
+        if(computer == you):
+            return None
+        if((computer - you) == -1 or (computer - you) == 2):
+            return True
+        else:
+            return False
 
-if(computer == you):
-    print("It's a Draw!")
+    def result(game, i=0, y_score=0, c_score=0):
+        f = open
+        i += 1
+        if game:
+            print("You Win!!!!")
+            f.write(f"Round{i} |  1  |   0\n")
+            y_score += 1
+        elif game == None:
+            print("It's a Draw!")
+            f.write(f"Round{i}  0  |   0\n")
+        else:
+            print("You Lose :((")
+            f.write(f"Round{i}  0  |   1\n")
+            c_score += 1
+    result(game(computer, you, y_score, c_score))
+
 
 else:
-    if((computer - you) == -1 or (computer - you) == 2):
-        print("You Win")
+    print(f"Your Score: {y_score}")
+    print(f"Computer Score: {c_score}")
+    if y_score > c_score:
+        print("You Won the Game")
+    elif y_score < c_score:
+        print("You Lost the Game")  
     else:
-        print("You Lose")
-
-
-#we have got this solution by doing (computer-you)
+        print("It was a Draw")
